@@ -33,8 +33,8 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
 		movPage.setStatusPago();
 		movPage.salvar();
-		
-		Assert.assertEquals("Movimentação adicionada com sucesso!", movPage.obterMensagemSucesso());
+		String mensagem = movPage.obterMensagemSucesso();
+		Assert.assertEquals("Movimentação adicionada com sucesso!", mensagem);
 	}
 	
 	@Test
