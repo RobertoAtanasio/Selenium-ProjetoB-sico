@@ -205,9 +205,6 @@ public class BasePage {
 		int idLinha = obterIndiceLinha(valor, tabela, idColuna);
 		
 		//procurar coluna do botao
-		if (colunaResultado.equals("Acoes")) {
-			colunaResultado = "Ações";
-		}
 		int idColunaBotao = obterIndiceColuna(colunaResultado, tabela);
 		
 		//clicar no botao da celula encontrada
