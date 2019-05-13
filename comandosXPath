@@ -1,0 +1,93 @@
+Comandos XPath:
+	
+//label[.="Senha"]
+//label[@for="exampleInputPassword1"]
+//input[@type="password"]
+//input[@id="txtUserName"] | input[@name="txtUserName"]
+//input[@type="password"][@name="senha"] 
+	
+Obs.: o exemplo abaixo foi feito no site: http://seleniumpractise.blogspot.com/
+Using () Index:
+Para acessar link, por exemplo:
+(//*[text()=" Click this link to start new Tab "])[2]		acessa a segunda ocorrência
+//a[@href="http://www.google.com"]							acesso direto ao endereço do link
+	
+Obs.: comandos retirados do site: http://learn-automation.com/how-to-write-dynamic-xpath-in-selenium/
+
+//---------------------------------------------------------------
+obter a lista de mensagens: trecho exemplo html:
+	<div class="alert alert-danger" role="alert">
+        <ul>
+            <li>Data da Movimentação é obrigatório</li>
+            <li>Data do pagamento é obrigatório</li>
+            <li>Descrição é obrigatório</li>
+            <li>Interessado é obrigatório</li>
+            <li>Valor é obrigatório</li>
+            <li>Valor deve ser um número</li>
+        </ul>
+    </div>
+	
+	xPath =  //div[@class='alert alert-danger']//li
+//---------------------------------------------------------------
+
+1) Using single attribute:
+	// tagname[@attribute-name='value1']
+
+	Example:
+		//a[@href='http://www.google.com'] 
+		//input[@id='name']
+	 	//input[@name='username']
+		//img[@alt='sometext']
+	
+2) Using multiple attribute:
+	//tagname[@attribute1='value1'][attribute2='value2']
+
+	Example:
+		//a[@id='id1'][@name='namevalue1']
+		//img[@src=''][@href='']
+
+3) Using contains method:
+	//tagname[contains(@attribute,'value1')]
+ 
+ 	Example:
+		//input[contains(@id,'')]
+		//input[contains(@name,'')]
+		//a[contains(@href,'')]
+		//img[contains(@src,'')]
+		//div[contains(@id,'')]
+	
+4) Using starts-with method:
+	//tagname[starts-with(@attribute-name,’’)]
+
+	Example:
+		//id[starts-with(@id,'')] 
+		//a[starts-with(@href='')]
+		//img[starts-with(@src='')]
+		//div[starts-with(@id='')]
+		//input[starts-with(@id='')]
+		//button[starts-with(@id,'')]
+	
+5) Using Following node:
+	Xpath/following::again-ur-regular-path
+ 
+ 	Example:
+		//input[@id='']/following::input[1]
+		//a[@href='']/following::a[1]
+		//img[@src='']/following::img[1]
+	
+6) Using preceding node:
+	Xpath/preceding::again-ur-regular-path
+ 
+ 	Example:
+		//input[@id=’’]/ preceding::input[1]
+		//a[@href=’’]/ preceding::a[1]
+		//img[@src=’’]/ preceding::img[1]
+
+7) Text method in XPath:
+	Syntax- tagname[text()=’text which is visible on page’]
+		Note- While using text() method make sure you provide the exact text else it will not match
+		Example //b[text()=’Admin’]
+
+8) Text method with contains:
+	Syntax- tagname[contains(text(),’partial text which you want to search ‘)]
+		Example – //*[contains(text(),’Employee Distribution by Subunit’)]
