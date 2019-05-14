@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.ce.wcaquino.core.BaseTest;
-import br.ce.wcaquino.core.Propriedades;
 import br.ce.wcaquino.pages.HomePage;
 import br.ce.wcaquino.pages.MenuPage;
 
@@ -15,6 +14,6 @@ public class SaldoTest extends BaseTest {
 	@Test
 	public void testSaldoConta() throws InterruptedException{
 		menu.acessarTelaPrincipal();
-		Assert.assertEquals("350.00", page.obterSaldoConta(Propriedades.NOME_CONTA_ALTERADA));
+		Assert.assertEquals("534.00", page.obterSaldoConta("Conta para saldo"));
 	}
 }

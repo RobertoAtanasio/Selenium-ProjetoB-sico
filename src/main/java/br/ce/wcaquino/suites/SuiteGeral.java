@@ -32,6 +32,8 @@ public class SuiteGeral {
 		page.setEmail("roberto.atanasio.pl@gmail.com");
 		page.setSenha("egito");
 		page.entrar();
+		page.resetar();
+		DriverFactory.killDriver();
 	}
 	
 	@AfterClass

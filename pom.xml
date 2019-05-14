@@ -15,6 +15,8 @@
   				<includes>
   					<include>br/ce/wcaquino/suites/*.java</include>
   				</includes>
+  				<parallel>all</parallel>
+  				<threadCount>2</threadCount>
   			</configuration>
   		</plugin>
   	</plugins>

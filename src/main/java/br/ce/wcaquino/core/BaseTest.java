@@ -8,25 +8,30 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import br.ce.wcaquino.pages.LoginPage;
+
 public class BaseTest {
 	
-//	private LoginPage page = new LoginPage();
+	private LoginPage page = new LoginPage();
 	
 	@Rule
 	public TestName testName = new TestName();
 	
-//	@Before
-//	public void inicializa(){
-//		page.acessarTelaInicial();
-//		page.setEmail("roberto.atanasio.pl@gmail.com");
-//		page.setSenha("egito");
-//		page.entrar();
-//	}
+	@Before
+	public void inicializa(){
+		if(Propriedades.FECHAR_BROWSER) {			
+			page.acessarTelaInicial();
+			page.setEmail("roberto.atanasio.pl@gmail.com");
+			page.setSenha("egito");
+			page.entrar();
+		}
+	}
 	
 	@After
 	public void finaliza() throws IOException{

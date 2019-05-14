@@ -23,4 +23,15 @@ public class LoginPage extends BasePage {
 		clicarBotao(By.xpath("//button[.='Entrar']"));
 //		clicarBotao(By.xpath("//button[text()='Entrar'][@type='submit']"));
 	}
+	
+	public void logar(String email, String senha) {
+		setEmail(email);
+		setSenha(senha);
+		entrar();
+	}
+	
+	public void resetar(){
+		clicarBotao(By.xpath("//a[text()='reset']"));
+//		clicarLink("reset");
+	}
 }

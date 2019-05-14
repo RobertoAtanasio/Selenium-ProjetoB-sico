@@ -5,17 +5,14 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
 import br.ce.wcaquino.core.BaseTest;
-import br.ce.wcaquino.core.Propriedades;
 import br.ce.wcaquino.pages.MenuPage;
 import br.ce.wcaquino.pages.MovimentacaoPage;
 import br.ce.wcaquino.utils.DataUtils;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTest extends BaseTest {
 
 	private MenuPage menuPage = new MenuPage();
@@ -29,8 +26,8 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setDataPagamento(DataUtils.obterDataFormatada(new Date()));
 		movPage.setDescricao("Movimentação do Teste");
 		movPage.setInteressado("Interessado Qualquer");
-		movPage.setValor("350");
-		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+		movPage.setValor("500");
+		movPage.setConta("Conta para movimentacoes");
 		movPage.setStatusPago();
 		movPage.salvar();
 		
@@ -65,7 +62,7 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setDescricao("Movimentação do Teste");
 		movPage.setInteressado("Interessado Qualquer");
 		movPage.setValor("500");
-		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+		movPage.setConta("Conta para movimentacoes");
 		movPage.setStatusPago();
 		movPage.salvar();
 		

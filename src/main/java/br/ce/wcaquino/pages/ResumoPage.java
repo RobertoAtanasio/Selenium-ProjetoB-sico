@@ -15,6 +15,15 @@ public class ResumoPage extends BasePage {
 	}
 	
 	public void pesquisarResumo() {
+//		clicarBotao(By.xpath("//input[@value='Buscar']"));
 		clicarBotao(By.xpath("//input[@type='submit'][@value='Buscar']"));
+	}
+	
+	public void selecionarAno(String ano) {
+		selecionarCombo("ano", ano);
+	}
+	
+	public void selecionarMes(String mes) {
+		selecionarCombo("mes", mes);
 	}
 }

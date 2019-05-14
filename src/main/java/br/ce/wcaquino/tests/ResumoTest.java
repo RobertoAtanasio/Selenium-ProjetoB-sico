@@ -3,9 +3,7 @@ package br.ce.wcaquino.tests;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -14,7 +12,7 @@ import br.ce.wcaquino.core.DriverFactory;
 import br.ce.wcaquino.pages.MenuPage;
 import br.ce.wcaquino.pages.ResumoPage;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ResumoTest extends BaseTest {
 
 	private MenuPage menuPage = new MenuPage();
@@ -24,8 +22,8 @@ public class ResumoTest extends BaseTest {
 	public void test1ExcluirMovimentacao(){
 		menuPage.acessarTelaResumo();
 		
-//		resumoPage.selecionarCombo("mes", "Setembro");
-//		resumoPage.selecionarCombo("ano", "2017");
+//		resumoPage.selecionarMes("Setembro");
+//		resumoPage.selecionarAno("2017");
 //		resumoPage.pesquisarResumo();
 		
 		resumoPage.excluirMovimentacao();
@@ -49,6 +47,9 @@ public class ResumoTest extends BaseTest {
 //		} catch (NoSuchElementException e) {
 //			
 //		}
+		
+		resumoPage.selecionarAno("2017");
+		resumoPage.pesquisarResumo();
 		
 		List<WebElement> elementosEncontrados = DriverFactory.getDriver()
 				.findElements(By.xpath("//*[@id='tabelaExtrato']/tbody/tr"));
