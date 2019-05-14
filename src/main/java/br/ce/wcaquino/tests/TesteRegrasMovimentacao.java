@@ -20,7 +20,7 @@ public class TesteRegrasMovimentacao extends BaseTest {
 	private MenuPage menuPage = new MenuPage();
 	private MovimentacaoPage movPage = new MovimentacaoPage();
 	
-	@Parameter
+	@Parameter 
 	public String dataMovimentacao;
 	@Parameter(value=1)
 	public String dataPagamento;
