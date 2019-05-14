@@ -44,18 +44,22 @@ public class DriverFactory {
 				case CHROME: cap = DesiredCapabilities.chrome(); break;
 			}
 			try {
+				//-----------------------------------------------------------------------------------
 				System.out.println("==> cap: " + cap);
 				System.out.println("==> definindo o Driver: " + Propriedades.BROWSER);
+				
 				URL url = new URL("http://localhost:4444/wd/hub");
 				System.out.println("==> URL: " + url);
-				RemoteWebDriver remote = new RemoteWebDriver(url, cap);
 				
-				
-				
+				RemoteWebDriver remote = new RemoteWebDriver(url, cap);				
 				System.out.println("==> RemoteWebDriver: " + remote);
-				driver = (WebDriver) remote;
-//				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
+				
+				driver = remote;
 				System.out.println("==> Driver: " + driver);
+				//-----------------------------------------------------------------------------------
+				
+//				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
+				
 			} catch (MalformedURLException e) {
 				System.out.println("==> Falha na conexão com o GRID");
 //				System.err.println("==> Falha na conexão com o GRID");
