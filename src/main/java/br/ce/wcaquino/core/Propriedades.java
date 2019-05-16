@@ -6,17 +6,19 @@ public class Propriedades {
 	
 	public static Browsers BROWSER = Browsers.FIREFOX;
 	
-	public static TipoExecucao TIPO_EXECUCAO = TipoExecucao.GRID;
+	public static TipoExecucao TIPO_EXECUCAO = TipoExecucao.LOCAL;
 	
 //	public static String NOME_CONTA_ALTERADA = "Conta Alterada " + System.nanoTime();  
 	
 	public enum Browsers {
 		CHROME,
-		FIREFOX
+		FIREFOX,
+		IE
 	}
 
 	public enum TipoExecucao {
 		LOCAL,
-		GRID
+		GRID,
+		NUVEM
 	}
 }
